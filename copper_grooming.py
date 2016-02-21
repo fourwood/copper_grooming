@@ -51,7 +51,8 @@ def main():
 
         # Find 'groomed.gif' in the HTML, subtract 1 to get the line before it,
         # which contains the run name.
-        groomed_run_idx = [i-1 for i,x in enumerate(html) if 'groomed.gif' in x]
+        groomed_run_idx = [i-1 for i,x in enumerate(html) \
+                if ('groomed.gif' in x) or ('groomed_noon.gif' in x)]
 
         # Then strip out the HTML and get the text in between...
         run_names_html = [html[i].strip() for i in groomed_run_idx]

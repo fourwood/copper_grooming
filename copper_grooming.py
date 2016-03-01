@@ -29,7 +29,9 @@ def main():
         ### Grab the grooming report, note the date and pull out which runs are groomed
         html = [line.decode() for line in response]
 
-        parsed_date_str = [s for s in html if 'February' in s][0].strip()
+        today = datetime.date.today()
+        cur_month_name = today.strftime("%B")
+        parsed_date_str = [s for s in html if cur_month_name in s][0].strip()
         date = datetime.datetime.strptime(parsed_date_str, "%A, %B %d, %Y %I:%M %p")
         date_str = date.strftime('%Y/%m/%d')
 

@@ -23,7 +23,7 @@ try:
                   'figure.subplot.right':   1.00,
                   'figure.subplot.bottom':  0.00,
                   'figure.subplot.top':     0.94,
-                  'font.size':              10}
+                  'font.size':              8}
         plt.rcParams.update(params)
         fig, ax = plt.subplots(figsize=(8.5,17))
         ax.set_frame_on(False)
